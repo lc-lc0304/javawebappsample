@@ -8,8 +8,8 @@ def getFtpPublishProfile(def publishProfilesJson) {
 }
 
 node {
-  withEnv(['AZURE_SUBSCRIPTION_ID=<f2ac2680-698f-480d-923e-cbbb0ed69325>',
-        'AZURE_TENANT_ID=<b388b808-0ec9-4a09-a414-a7cbbd8b7e9b>']) {
+  withEnv(['AZURE_SUBSCRIPTION_ID=f2ac2680-698f-480d-923e-cbbb0ed69325',
+        'AZURE_TENANT_ID=b388b808-0ec9-4a09-a414-a7cbbd8b7e9b']) {
     stage('init') {
       checkout scm
     }
@@ -19,10 +19,10 @@ node {
     }
   
     stage('deploy') {
-      def resourceGroup = '<lc_vm>'
-      def webAppName = '<lcappservice>'
+      def resourceGroup = 'lc_vm'
+      def webAppName = 'lcappservice'
       // login Azure
-      withCredentials([usernamePassword(credentialsId: '<a570f416-5e38-4d64-a34c-ad43833a3e18>', passwordVariable: 'dCEExr~wV~R8g5.G~81D.4WXv4YSR15LBw', usernameVariable: '8482de37-a6db-4b77-94ef-b8ad72ed40b
+      withCredentials([usernamePassword(credentialsId: 'a570f416-5e38-4d64-a34c-ad43833a3e18', passwordVariable: 'dCEExr~wV~R8g5.G~81D.4WXv4YSR15LBw', usernameVariable: '8482de37-a6db-4b77-94ef-b8ad72ed40b
 ')]) {
        sh '''
           az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
