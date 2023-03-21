@@ -22,8 +22,7 @@ node {
       def resourceGroup = 'lc_vm'
       def webAppName = 'lcappservice'
       // login Azure
-      withCredentials([usernamePassword(credentialsId: 'a570f416-5e38-4d64-a34c-ad43833a3e18', passwordVariable: 'dCEExr~wV~R8g5.G~81D.4WXv4YSR15LBw', usernameVariable: '8482de37-a6db-4b77-94ef-b8ad72ed40b
-')]) {
+      withCredentials([usernamePassword(credentialsId: '3cc03b89-40e7-4248-b6c0-164cea23bf97', passwordVariable: '[{"key":"client_secret","value":"7C~mm~3MT01r~ciR~A10i~1Jkn_e0fjFiL","description":"","type":"default","enabled":true}]', usernameVariable: '3cc03b89-40e7-4248-b6c0-164cea23bf97')]) {
        sh '''
           az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
           az account set -s $AZURE_SUBSCRIPTION_ID
